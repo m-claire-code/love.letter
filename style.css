@@ -1,0 +1,238 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+min-height: 100vh;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+font-family: Georgia, serif;
+
+background: #ffe6ee;
+
+overflow: hidden;
+}
+
+h1 {
+color: #c94f70;
+font-size: 42px;
+margin-bottom: 5px;
+}
+
+.instruction {
+color: #9b5368;
+margin-bottom: 30px;
+}
+
+.envelope-wrapper {
+cursor: pointer;
+perspective: 1000px;
+}
+
+.envelope {
+position: relative;
+
+width: 320px;
+height: 210px;
+
+background: #f7a9bc;
+
+overflow: hidden;
+
+border-radius: 5px;
+
+box-shadow:
+0 15px 30px rgba(0, 0, 0, 0.15);
+
+transition: 0.6s;
+}
+
+/* THE LETTER */
+
+.letter {
+position: absolute;
+
+width: 280px;
+height: 300px;
+
+left: 20px;
+bottom: 0px;
+
+padding: 25px;
+
+background: #fffaf5;
+
+border-radius: 5px;
+
+color: #6d3c4b;
+
+box-shadow:
+0 5px 15px rgba(0, 0, 0, 0.15);
+
+transition: transform 1.2s ease-in-out;
+
+z-index: -1;
+
+overflow-y: auto;
+}
+
+.letter h2 {
+text-align: center;
+color: #c94f70;
+}
+
+.letter p {
+line-height: 1.5;
+}
+
+/* FRONT POCKET */
+
+.pocket {
+position: absolute;
+
+width: 0;
+height: 0;
+
+bottom: 0;
+left: 0;
+
+border-left: 160px solid transparent;
+border-right: 160px solid transparent;
+border-bottom: 110px solid #ee91a9;
+
+z-index: 2;
+}
+
+/* ENVELOPE FLAP */
+
+.flap {
+position: absolute;
+
+width: 0;
+height: 0;
+
+top: 0;
+left: 0;
+
+border-left: 160px solid transparent;
+border-right: 160px solid transparent;
+border-top: 120px solid #f28fa8;
+
+transform-origin: top;
+
+transition: transform 1.2s ease-in-out;
+
+z-index: 1;
+}
+
+/* OPEN ENVELOPE */
+
+.envelope.open .flap {
+transform: rotateX(180deg);
+z-index: 0;
+}
+.envelope.open {
+    overflow: visible;
+}
+
+.envelope.open .letter {
+transform: translateY(-220px);
+z-index: 10;
+}
+
+/* HEARTS */
+
+.hearts span {
+position: absolute;
+
+bottom: -50px;
+
+font-size: 25px;
+
+animation: float 8s linear infinite;
+
+opacity: 0.7;
+}
+
+.hearts span:nth-child(1) {
+left: 10%;
+animation-delay: 1s;
+}
+
+.hearts span:nth-child(2) {
+left: 25%;
+animation-delay: 3s;
+}
+
+.hearts span:nth-child(3) {
+left: 45%;
+animation-delay: 2s;
+}
+
+.hearts span:nth-child(4) {
+left: 65%;
+animation-delay: 4s;
+}
+
+.hearts span:nth-child(5) {
+left: 80%;
+animation-delay: 1.5s;
+}
+
+.hearts span:nth-child(6) {
+left: 90%;
+animation-delay: 5s;
+}
+
+@keyframes float {
+
+0% {
+transform: translateY(0) rotate(0deg);
+}
+
+100% {
+transform: translateY(-110vh) rotate(360deg);
+}
+}
+
+.bottom-text {
+margin-top: 50px;
+color: #c94f70;
+}
+
+/* PHONE SCREEN */
+
+@media (max-width: 500px) {
+
+h1 {
+font-size: 32px;
+}
+
+.envelope {
+width: 280px;
+height: 185px;
+}
+
+.pocket {
+border-left-width: 140px;
+border-right-width: 140px;
+border-bottom-width: 100px;
+}
+
+.flap {
+border-left-width: 140px;
+border-right-width: 140px;
+border-top-width: 105px;
+}
+
+.letter {
+width: 245px;
+height: 270px;
+left: 17px;
+}
+}

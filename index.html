@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For my love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hearts">
+    <span>♡</span>
+<span>♥</span>
+<span>♡</span>
+<span>♥</span>
+<span>♡</span>
+<span>♥</span>
+</div>
+
+<h1>For You 💌</h1>
+
+<p class="instruction">Click the envelope 💗</p>
+
+<div class="envelope-wrapper" onclick="openLetter()">
+
+<div class="envelope" id="envelope">
+
+<div class="letter">
+<h2>To My Love 💕</h2>
+
+<p>
+My Dearest, Ariane.
+</p>
+
+<p>
+Happy 1st anniversary babe! its been a year, 
+and i would love to remind you how special you are to me.
+Every moment with you means so much, and I am so, so grateful
+to have you in my life, as my closest friend, and ofcoure as my girlfriend.
+</p>
+
+<p>
+You make my days brighter just by being there.
+you are loved, appreciated, and cherished for always and forever. 💗
+</p>
+
+<p>ps: im so, so excited to celebrate this special day with you.
+    see you the soonest, love yah!💞
+</p>
+
+<p>
+With all my love,<br>
+soysoy🎀
+</p>
+</div>
+
+<div class="flap"></div>
+<div class="pocket"></div>
+
+</div>
+
+</div>
+
+<p class="bottom-text">Made with love ♡</p>
+
+<script src="script.js"></script>
+<script>
+const envelope = document.querySelector(".envelope-wrapper");
+const envelopeBox = document.querySelector(".envelope");
+
+envelope.addEventListener("click", function() {
+envelopeBox.classList.toggle("open");
+});
+</script>
+</body>
+</html>
